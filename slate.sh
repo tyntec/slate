@@ -241,9 +241,8 @@ if [ "${command}" = "serve" ]; then
 elif [[ "${command}" = "build" ]]; then
   run_build
 elif [[ ${command} = "deploy" ]]; then
-  if [[ ! ${no_build} ]]; then
+  if [[ ${no_build} != true ]]; then
     run_build
   fi
-  exit 0
   main "$@"
 fi
